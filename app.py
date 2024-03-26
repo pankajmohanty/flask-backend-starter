@@ -7,7 +7,7 @@ from propelauth_flask import init_auth, current_user, current_org
 load_dotenv()
 
 app = Flask(__name__)
-init_auth(os.getenv("PROPELAUTH_AUTH_URL"), os.getenv("PROPELAUTH_API_KEY"))
+auth = init_auth(os.getenv("PROPELAUTH_AUTH_URL"), os.getenv("PROPELAUTH_API_KEY"))
 
 @app.route("/whoami")
 @auth.require_user
